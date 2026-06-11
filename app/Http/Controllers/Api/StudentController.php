@@ -33,7 +33,7 @@ class StudentController extends Controller
             'name' => 'required|max:191',
             'email' => 'required|email|max:191',
             'phone' => 'required|digits:10',
-            'course' => 'required|string|max:255',
+            'course' => 'required|string|max:191',
         ]);
 
         if($validator->fails()){
