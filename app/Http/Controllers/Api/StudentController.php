@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Student;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Validator;
+use Illuminate\Support\Facades\Validator;
 
 class StudentController extends Controller
 {
@@ -29,11 +29,11 @@ class StudentController extends Controller
 
 
     public function store(Request $request){
-        $validator = Validator::make($request -> all (),[
-            'name' => 'required |max:191',
-            'email' => 'required |email |max:191',
-            'phone' => 'required |digits:10',
-            'course' => 'required |string |max:255',
+        $validator = Validator::make($request->all(),[
+            'name' => 'required|max:191',
+            'email' => 'required|email|max:191',
+            'phone' => 'required|digits:10',
+            'course' => 'required|string|max:255',
         ]);
 
         if($validator->fails()){
